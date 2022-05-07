@@ -1,4 +1,3 @@
-import requests
 from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
 from markdown2 import markdown
