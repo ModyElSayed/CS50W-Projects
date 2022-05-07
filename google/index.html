@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Homepage</title>
+        <link href="index_style.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <ul id="nav_bar">
+                <li class="nav-links"><a href="image_search.html">Images</a></li>
+                <li class="nav-links" id="gmail"><a href="advanced_search.html">Advanced search</a></li>
+            </ul>
+        </nav>
+
+        <div class="google">
+            <a href="index.html" id="google_logo"><img src="googlelogo.png" alt="google-logo" class="google"></a>
+        </div>
+
+        <div class="form">
+            <form action="https://google.com/search" method="GET">
+                <label for="form-search"></label>
+                <input type="text" name="q" id="form-search">
+                <input type="submit" value="Google Search" id="google_search">
+            </form>
+
+            <form action="https://google.com/doodles" method="GET">
+                <input type="submit" value="I'm Feeling Lucky">
+            </form>
+        </div>
+    </body>
+</html>
