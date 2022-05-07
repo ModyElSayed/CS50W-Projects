@@ -1,0 +1,21 @@
+{% extends 'auctions/index.html' %}
+
+{% block title %}
+Winning Listings
+{% endblock %}
+
+{% block body %}
+    <h2>Winning Listings</h2>
+    {% for win in wins %}
+        <div class="container border rounded m-5 p-4">
+            <p class="fw-bolder fs-5">{{ win.listing.title }}</p>
+            <p class="fs-6"><strong>Price: </strong>${{ win.listing.final_bid|floatformat:2 }}</p>
+            <p class="fs-6">{{ win.listing.description }}</p>
+            <p class="text-muted fs-6">Created {{ win.listing.date_created }}</p>
+        </div>
+    {% empty %}
+        <div class="container">
+            <p class="fs-5 mt-5">You didn't win any listing</p>
+        </div>
+    {% endfor %}
+{% endblock %}

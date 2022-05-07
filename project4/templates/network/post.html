@@ -1,0 +1,40 @@
+<div class="m-2 rounded border post-container">
+    <p class="fw-bolder m-3 fs-5"><a class="text-decoration-none text-dark" href="{% url 'network:profile' post.username %}">{{ post.username }}</a></p>
+    <p class="ms-3 mt-3">{{ post.content }}</p>
+    <time class="ms-3 text-muted" data-exact="{{ post.date_created_exact }}">{{ post.date_created }}</time>
+    <div class="m-3 likes">
+        {% csrf_token %}
+        <span class="bi bi-heart text-danger" id="heart_{{ post.post_id }}"></span>
+        <span class="badge bg-white text-dark" id="num-of-likes_{{ post.post_id }}">{{ post.number_of_likes }}</span>
+    </div>
+
+    <button type="button" id="appear-comment-{{ post.post_id }}" class="btn btn-secondary position-relative ms-3 mb-3">
+        Comment
+        {% if post.number_of_comments != 0 %}
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ post.number_of_comments }}
+            <span class="visually-hidden">unread comments</span>
+            </span>
+        {% endif %}
+    </button>
+    {% if post.username == user.username %}
+        {% csrf_token %}
+        <button type="button" class="btn btn-outline-primary ms-3 mb-3 edit-post">Edit</button>
+    {% endif %}
+
+    <div class="input-group">
+        <textarea class="ms-3 form-control" id="comment-content-{{ post.post_id }}" placeholder="Comment" aria-label="Comment" aria-describedby="comment-{{ post.post_id }}"></textarea>
+        <button class="btn btn-outline-secondary me-3" disabled type="button" id="add-comment-{{ post.post_id }}">Add Comment</button>
+    </div>
+
+    <p class="ms-3 mt-3 text-danger error-edit"></p>
+
+    <input type="hidden" value="{{ post.post_id }}" id="post-{{ post.post_id }}">
+
+    <div id="post-comment-{{ post.post_id }}" style="display: none">
+        {% for comment in post.comments %}
+            {% include 'network/comment.html' with comment=comment post_id=post.post_id %}
+        {% endfor %}
+    </div>
+
+</div>

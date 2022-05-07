@@ -1,0 +1,7 @@
+<div class="m-3 rounded border comment-container">
+    <p class="fw-bolder m-3 fs-5"><a class="text-decoration-none text-dark" href="{% url 'network:profile' comment.username %}">{{ comment.username }}</a></p>
+    <p class="ms-3 mt-3">{{ comment.content }}</p>
+    <time class="ms-3 mb-3 text-muted">{{ comment.date_created }}</time>
+    <div class="m-3"></div>
+    <input type="hidden" value="{{ post_id }}" id="comment-{{ comment.comment_id }}">
+</div>

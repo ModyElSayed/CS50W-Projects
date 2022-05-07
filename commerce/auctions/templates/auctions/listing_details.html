@@ -1,0 +1,72 @@
+{% extends 'auctions/index.html' %}
+{% load static %}
+
+{% block title %}
+Listings
+{% endblock %}
+
+{% block body %}
+    <p class="fs-1 m-2"><strong>{{ listing.title }}</strong></p>
+    {% if listing.user.id != user.id %}
+        {% if in_watchlist %}
+            <span class="badge bg-secondary m-2">In Watchlist</span>
+        {% else %}
+            <form action="{% url 'auctions:add_to_watchlist' listing.pk %}" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-secondary m-2" value="Add to Watchlist">
+            </form>
+        {% endif %}
+    {% endif %}
+    <p class="fs-5 m-2">{{ listing.description }}</p>
+    {% if user.id == listing.user.id %}
+        <p class="fs-4 m-2"><strong>Final bid: </strong>${{ listing.final_bid|floatformat:2 }}</p>
+        <form action="{% url 'auctions:close_bid' listing.pk %}" method="post">
+            {% csrf_token %}
+            <input class="btn btn-danger m-2" type="submit" value="Close Bid">
+        </form>
+    {% else %}
+        <p class="fs-4 m-2"><strong>Price: </strong>${{ listing.final_bid|floatformat:2 }}</p>
+        {% if number_of_bidders %}
+            <p class="fs-5 m-2">{{ number_of_bidders }} bid(s) so far.</p>
+        {% else %}
+            <p class="fs-5 m-2">Be the first bidder.</p>
+        {% endif %}
+        <form action="{% url 'auctions:listing_details' listing.title %}" method="post">
+            {% csrf_token %}
+            <div class="form-group m-2">
+                {{ bid_form }}
+            </div>
+            {% if message %}
+                <div class="m-2">{{ message }}{{ final_bid|floatformat:2 }}</div>
+            {% endif %}
+            <input class="btn btn-primary m-2" type="submit" value="Place Bid">
+        </form>
+        <p class="fs-4 m-2"><strong>Details</strong></p>
+        <ul>
+            <li>Listed by: <strong class="text-blue">{{ listing.user.username|capfirst }}</strong></li>
+            <li>Category: {{ listing.category }}</li>
+        </ul>
+        <hr>
+    {% endif %}
+        <form action="{% url 'auctions:add_comment' listing.pk %}" method="post">
+            {% csrf_token %}
+            <div class="form-floating m-2">
+                {{ comment_form }}
+                <label for="floatingTextarea2">Comments</label>
+                <input class="btn btn-primary mt-2" type="submit" value="Submit">
+            </div>
+        </form>
+    <hr>
+    {% if comments|length > 0 %}
+        <p class="fs-2 m-2"><strong>Comments</strong></p>
+        {% for comment in comments %}
+                <div class="commented-section mt-2 m-4">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                        <h5 class="mr-2">{{ comment.user.username|capfirst }}: </h5><p class="text-muted mt-2 ms-2">{{ comment.date_added }}</p>
+                    </div>
+                    <div class="comment-text-sm ps-3"><span>{{ comment.comments }}</span></div>
+                </div>
+        {% endfor %}
+    {% endif %} 
+
+{% endblock %}

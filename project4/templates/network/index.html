@@ -1,0 +1,55 @@
+{% extends "network/layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <div class="m-2 rounded border">
+        <h3 class="m-3">New Post</h3>
+        <p class="m-3 text-success" id="post-added-update"></p>
+            <form method="post" id="new-post">
+                {% csrf_token %}
+                <div class="form-floating m-3">
+                    <textarea id="new-post-content" required autofocus placeholder="Say it loud" class="form-control"></textarea>
+                    <label for="new-post-content" class="text-muted">Say it loud</label>
+                </div>
+                <input disabled type="submit" id="submit-post" class="btn btn-primary mt-1 ms-3 mb-3" value="Post"/>
+            </form>
+        </div>
+    {% endif %}
+
+    {% for post in posts %}
+        {% include 'network/post.html' with post=post %}
+    {% endfor %}
+
+    {% if posts|length > 10 %}
+        <nav class="ms-2">
+            <ul class="pagination">
+
+                {% if posts.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a></li>
+                {% endif %}
+
+                {% for page in page_numbers %}
+                    {% if page == posts.number %}
+                        <li class="page-item active"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if posts.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ posts.paginator.num_pages }}">Last &raquo;</a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    {% endif %}
+
+
+    <input type="hidden" value="index" id="page">
+{% endblock %}

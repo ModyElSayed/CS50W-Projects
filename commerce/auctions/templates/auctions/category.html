@@ -1,0 +1,27 @@
+{% extends 'auctions/index.html' %}
+
+{% block title %}
+Category
+{% endblock %}
+
+{% block body %}
+    <h2>Category</h2>
+
+    {% for listing_type in listings_type %}
+        <div class="container border rounded m-5 p-4">
+            <p class="fw-bolder fs-5"><a class="text-decoration-none text-black" href="{% url 'auctions:listing_details' listing_type.title %}">{{ listing_type.title }}</a></p>
+            <p class="fs-6"><strong>Price: </strong>${{ listing_type.final_bid|floatformat:2 }}</p>
+            <p class="fs-6">{{ listing_type.description }}</p>
+            <p class="text-muted fs-6">Created {{ listing_type.date_created }}</p>
+            {% if listing_type.status == 'Active' %}
+                <p class="text-success fs-6"><span class="border rounded border-danger p-2">{{ listing_type.status }}</span></p>
+            {% else %}
+                <p class="text-danger fs-6"><span class="border rounded border-danger p-2">{{ listing_type.status }}</span></p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <div class="container">
+            <p class="fs-5 mt-5">There isn't any listing right now</p>
+        </div>
+    {% endfor %}
+{% endblock %}

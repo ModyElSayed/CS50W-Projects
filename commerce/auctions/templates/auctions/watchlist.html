@@ -1,0 +1,26 @@
+{% extends "auctions/index.html" %}
+
+{% block title %}
+Watchlist
+{% endblock %}
+
+{% block body %}
+    <h2>Watchlist</h2>
+    {% for watchlist_object in watchlist_data %}
+
+        <div class="container border rounded m-5 p-4">
+            <p class="fw-bolder fs-5"><a class="text-decoration-none text-black" href="{% url 'auctions:listing_details' watchlist_object.watchlist.title %}">{{ watchlist_object.watchlist.title }}</a></p>
+            <p class="fs-6"><strong>Price: </strong>${{ watchlist_object.watchlist.final_bid|floatformat:2 }}</p>
+            <p class="fs-6">{{ watchlist_object.watchlist.description }}</p>
+            <p class="text-muted fs-6">Created {{ watchlist_object.watchlist.date_created }}</p>
+            <form action="{% url 'auctions:delete_from_watchlist' watchlist_object.watchlist.pk %}" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-danger mt-2" value="Remove">
+            </form>
+        </div>
+    {% empty %}
+        <div class="container">
+            <p class="fs-5 mt-5">There isn't any listing right now</p>
+        </div>
+    {% endfor %}
+{% endblock %}

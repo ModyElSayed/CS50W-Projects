@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block category %}
+    {% for choice in choices %}
+        <li><a class="dropdown-item" href="{% url 'auctions:category' listings_type=choice %}">{{ choice }}</a></li>
+    {% endfor %}
+{% endblock %}
+
+{% block watchlist %}
+    {% if number_of_lists %}
+    <span class="badge text-white bg-secondary">{{ number_of_lists }}</span>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    {% for active_listing in active_listings %}
+        <div class="container border rounded m-5 p-4">
+            <p class="fw-bolder fs-5"><a class="text-decoration-none text-black" href="{% url 'auctions:listing_details' active_listing.title %}">{{ active_listing.title }}</a></p>
+            <p class="fs-6"><strong>Price: </strong>${{ active_listing.final_bid|floatformat:2 }}</p>
+            <p class="fs-6">{{ active_listing.description }}</p>
+            <p class="text-muted fs-6">Created {{ active_listing.date_created }}</p>
+        </div>
+    {% empty %}
+        <div class="container">
+            <p class="fs-5 mt-5">There isn't any listing right now</p>
+        </div>
+    {% endfor %}
+{% endblock %}

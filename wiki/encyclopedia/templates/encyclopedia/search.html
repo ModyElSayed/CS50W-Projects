@@ -1,0 +1,12 @@
+{% extends "encyclopedia/base.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block body %}
+    <h1>Search Result</h1>
+    <ul>
+    {% for entry in matched %}
+        <li><a href="{% url 'wiki:title' title_name=entry %}">{{ entry }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

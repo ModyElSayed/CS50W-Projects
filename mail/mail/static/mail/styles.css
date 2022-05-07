@@ -1,0 +1,42 @@
+#compose-body {
+    min-height: 400px;
+}
+
+#emails-view, #compose-view, #email-content {
+    display: none;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    75% {
+        opacity: 0;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+        line-height: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+}
+
+.hide {
+    float: right;
+}
+
+.archive {
+    animation-name: hide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}

@@ -1,0 +1,33 @@
+{% extends 'network/layout.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block body %}
+    <div class="m-2 rounded border" id="profile-container">
+        <h3 class="m-3" id="profile-username">{{ username }}</h3>
+        <p class="m-3" id="follow-data"><strong>Followers: </strong>{{ number_of_followers }} <strong>Following: </strong>{{ number_of_following }}</p>
+        <p>{{ bio }}</p>
+        {% csrf_token %}
+        {% if user.is_authenticated and is_follower %}
+            <button class="btn btn-outline-primary m-3" id="follow-button">Unfollow</button>
+        {% elif user.is_authenticated and username != user.username %}
+            <button class="btn btn-primary m-3" id="follow-button">Follow</button>
+        {% elif not user.is_authenticated %}
+            <button class="btn btn-primary m-3"><a href="{% url 'network:login' %}" class="text-white text-decoration-none">Login to Follow</a></button>
+        {% endif %}
+    </div>
+
+    {% if posts|length != 0 %}
+        <h3 class="m-3">All Posts</h3>
+    {% else %}
+        <h3 class="m-3">There is no Posts</h3>
+    {% endif %}
+
+
+    {% for post in posts %}
+        {% include 'network/post.html' with post=post %}
+    {% endfor %}
+    <input type="hidden" value="profile" id="page">
+{% endblock %}

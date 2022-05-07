@@ -1,0 +1,12 @@
+{% extends 'network/layout.html' %}
+
+{% block title %}
+Followings
+{% endblock %}
+
+{% block body %}
+    {% for post in posts %}
+        {% include 'network/post.html' with post=post %}
+    {% endfor %}
+    <input type="hidden" value="following" id="page">
+{% endblock %}

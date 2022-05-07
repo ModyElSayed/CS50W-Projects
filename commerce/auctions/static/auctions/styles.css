@@ -1,0 +1,16 @@
+body {
+    padding: 10px;
+}
+
+.text-blue {
+    color: #336ff4;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-top: 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block
+}

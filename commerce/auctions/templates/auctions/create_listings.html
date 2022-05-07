@@ -1,0 +1,21 @@
+{% extends 'auctions/index.html' %}
+
+{% block title %}
+Create Listings
+{% endblock %}
+
+{% block body %}
+    <h2>Create new listing</h2>
+    <form action="{% url 'auctions:create_listings' %}" method="post">
+        {% csrf_token %}
+        <div class="mt-5">
+            {% for input in listing_form %}
+                <div class="form-floating m-3">
+                    {{ input }}
+                    <label for="{{ input.id_for_label }}">{{ input.label }}</label>
+                </div>
+            {% endfor %}
+            <input class="btn btn-primary m-3" type="submit" value="Submit">
+        </div>
+    </form>
+{% endblock %}
