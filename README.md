@@ -119,7 +119,7 @@ Front-end for _**Google Search**_, _**Google Image Search**_, and **_Google Adva
   - Find pages with… “any of these words:”
   - Find pages with… “none of these words:”
 
-###### Front-end: HTML, and CSS<br/>Directory: search
+###### Frontend: HTML, and CSS<br/>Directory: search
 
 ## Contact
 - [Linkedin](https://www.linkedin.com/in/muhammad-el-sayed-2000)
