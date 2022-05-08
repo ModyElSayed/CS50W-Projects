@@ -47,7 +47,7 @@ Using JavaScript, HTML, and CSS, it's an implementation of a single-page-app ema
 ## Commerce
 An **eBay-like** e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”
 
-<img width="100" height="100" src="https://github.com/ModyElSayed/CS50W-Projects/commerce/screenshots/auction_listings.png"><br/>
+<img width="100" height="100" src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/commerce/screenshots/auction_listings.png"><br/>
 
 ### Specification
 - **Create Listing**: Users can visit a page to create a new listing. They can specify a title for the listing, a text-based description, and what the starting bid should be. Users also optionally can provide a URL for an image for the listing and/or a category (e.g. Fashion, Toys, Electronics, Home, etc.).
