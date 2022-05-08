@@ -51,7 +51,7 @@ Using JavaScript, HTML, and CSS, it's an implementation of a single-page-app ema
   - The application shows the email’s sender, recipients, subject, timestamp, and body.
   - Once the email has been clicked on, the application marks the email as read.
 - **Archive and Unarchived**: Users are able to archive and unarchived emails that they have received.
-  - When viewing an Inbox email, the user is presented with a button that lets them archive the email. When viewing an Archive email, the user is presented with a button that lets them unarchived the email. 
+  - When viewing an Inbox email, the user is presented with a button that lets them archive the email. When viewing an Archive email, the user is presented with a button that lets them unarchived the email.
   - Once an email has been archived or unarchived, load the user’s inbox.
 - **Reply**: Users are able to reply to an email.
   - When viewing an email, the user is presented with a “Reply” button that lets them reply to the email.
@@ -65,6 +65,7 @@ Using JavaScript, HTML, and CSS, it's an implementation of a single-page-app ema
 ## Commerce
 An **eBay-like** e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”
 
+
 <img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/commerce/screenshots/auction_listings.png"><br/>
 
 ### Specification
@@ -74,9 +75,9 @@ An **eBay-like** e-commerce auction site that will allow users to post auction l
   - If the user is signed in, the user is able to add the item to their “Watchlist.” If the item is already on the watchlist, the user is able to remove it.
   - If the user is signed in, the user is able to bid on the item. The bid must be at least as large as the starting bid, and must be greater than any other bids that have been placed (if any). If the bid doesn’t meet those criteria, the user is presented with an error.
   - If the user is signed in and is the one who created the listing, the user have the ability to “close” the auction from this page, which makes the highest bidder the winner of the auction and makes the listing no longer active.
-  - If a user is signed in on a closed listing page, and the user has won that auction, the page say so. 
+  - If a user is signed in on a closed listing page, and the user has won that auction, the page say so.
   - Users who are signed in are able to add comments to the listing page. The listing page displays all comments that have been made on the listing.
-- **Watchlist**: Users who are signed in can visit a **Watchlist** page, which displays all the listings that a user has added to their watchlist. Clicking on any of those listings takes the user to that listing’s page. 
+- **Watchlist**: Users who are signed in can visit a **Watchlist** page, which displays all the listings that a user has added to their watchlist. Clicking on any of those listings takes the user to that listing’s page.
 - **Categories**: Users can visit a page that displays a list of all listing categories. Clicking on the name of any category takes the user to a page that displays all the active listings in that category.
 - **Models**: The application have 5 models: `User`, `AuctionListings`, `ListingComments`, `ListingBids`, `Watchlist`.
 - **Django Admin Interface**: Via the Django admin interface, a site administrator can view, add, edit, and delete any listings, comments, and bids made on the site.
@@ -89,7 +90,7 @@ A **Wikipedia-like** online encyclopedia. Each encyclopedia entry will be saved 
 <img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/commerce/screenshots/home.png"><br/>
 
 ### Specification
-- **Entry Page**: Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, render a page that displays the contents of that encyclopedia entry. 
+- **Entry Page**: Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, render a page that displays the contents of that encyclopedia entry.
 - **Home Page**: Listing the names of all pages in the encyclopedia, user can click on any entry name to be taken directly to that entry page.
 - **Search**: The user can type a query into the search box in the sidebar to search for an encyclopedia entry.
     - If the query matches the name of an encyclopedia entry, the user should be redirected to that entry’s page.
@@ -107,7 +108,7 @@ A **Wikipedia-like** online encyclopedia. Each encyclopedia entry will be saved 
 Front-end for _**Google Search**_, _**Google Image Search**_, and **_Google Advanced Search_** as well as the ability to do search for every type of search.
 
 ### Specification
- 
+
 - On the **Google Search** page, the user can type a query, click “Google Search”, and be taken to the Google search results for that page.
 - On the **Google Image Search** page, the user can type a query, click a search button, and be taken to the Google Image search results for that page.
 * On the **Google Advanced Search** page, the user can provide input for the following four fields (taken from Google’s own advanced search options)
