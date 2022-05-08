@@ -9,17 +9,35 @@ All projects of CS50's Web Programming with Python and JavaScript
 - [Search](#search)
 <br/>
 
+Every project has a screenshots directory for a sneak peek of the project
 IDEs used: **_PyCharm_** for Django, **_WebStorm_** (For Frontend Project Only)
 
 ## Network
+A Twitter-like social network website for making posts, following users, adding comments, etc.
 
+<img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/project4/screenshots/home_1.png"><br/>
 
 ### Specification
+- **New Post**: Users who are signed in are able to write a new text-based post by filling in text into a text area and then clicking a button to submit the post.
+- **All Posts**: The “All Posts” link in the navigation bar takes the user to a page where they can see all posts from all users, with the most recent posts first.
+- **Profile Page**: Clicking on a username loads that user’s profile page. This page:
+  - Display the number of followers the user has, as well as the number of people that the user follows.
+  - Display all the posts for that user, in reverse chronological order.
+  - For any other user who is signed in, this page also display a “Follow” or “Unfollow” button that will let the current user toggle whether or not they are following this user’s posts. Note that this only applies to any “other” user: a user is not able to follow themselves.
+- **Following**: The “Following” link in the navigation bar takes the user to a page where they see all posts made by users that the current user follows.
+- **Pagination**: On any page that displays posts, posts are only displayed 10 on a page. If there are more than ten posts, a “Next” button appears to take the user to the next page of posts. If not on the first page, a “Previous” button appears to take the user to the previous page of posts as well.
+- **Edit Post**: Users are able to click an “Edit” button on any of their own posts to edit that post. It does not allow editing more than 1 post at the same time.
+  - When a user clicks “Edit” for one of their own posts, the content of their post is replaced with a `textarea` where the user can edit the content of their post.
+  - For security, the application is designed such that it is not possible for a user, via any route, to edit another user’s posts.
+- **“Like”** and **“Unlike”**: Users are able to click the like button on any post to toggle whether or not they “like” that post.
+- **Comments**: Users are able to add comments to any post.
 
 ###### Frontend: HTML, CSS, Javascript, and Bootstrap<br/>Backend: Django<br/>Directory: project4
 
 ## Mail
 Front-end for an email client that makes API calls to send and receive emails.
+
+<img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/mail/screenshots/inbox.png"><br/>
 
 ### Specification
 Using JavaScript, HTML, and CSS, it's an implementation of a single-page-app email client inside of `inbox.js`
@@ -47,7 +65,7 @@ Using JavaScript, HTML, and CSS, it's an implementation of a single-page-app ema
 ## Commerce
 An **eBay-like** e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”
 
-<img width="100" height="100" src="https://github.com/ModyElSayed/CS50W-Projects/commerce/screenshots/auction_listings.png"><br/>
+<img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/commerce/screenshots/auction_listings.png"><br/>
 
 ### Specification
 - **Create Listing**: Users can visit a page to create a new listing. They can specify a title for the listing, a text-based description, and what the starting bid should be. Users also optionally can provide a URL for an image for the listing and/or a category (e.g. Fashion, Toys, Electronics, Home, etc.).
@@ -67,6 +85,8 @@ An **eBay-like** e-commerce auction site that will allow users to post auction l
 
 ## Wiki
 A **Wikipedia-like** online encyclopedia. Each encyclopedia entry will be saved as a Markdown file
+
+<img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/commerce/screenshots/home.png"><br/>
 
 ### Specification
 - **Entry Page**: Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, render a page that displays the contents of that encyclopedia entry. 
