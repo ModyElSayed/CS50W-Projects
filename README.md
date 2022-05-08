@@ -1,5 +1,5 @@
 # CS50W-Projects
-All projects of CS50's Web Programming with Python and JavaScript
+All projects of CS50's Web Programming with Python and JavaScript, these projects are done from **_scratch_** (except **Mail** because it was a single-page-app and the django part was implemented for me, but I understand every sentence), and they **are not base on the lectures**.
 
 ### Table of Content
 - [Network](#network)
@@ -7,13 +7,15 @@ All projects of CS50's Web Programming with Python and JavaScript
 - [Mail](#mail)
 - [Wiki](#wiki)
 - [Search](#search)
+- [Contact](#contact)
 <br/>
 
 Every project has a screenshots directory for a sneak peek of the project
 IDEs used: **_PyCharm_** for Django, **_WebStorm_** (For Frontend Project Only)
 
 ## Network
-A Twitter-like social network website for making posts, following users, adding comments, etc.
+A Twitter-like social network website for making posts, following users, adding comments, etc. 
+> This is the only project uploaded at PythonAnyWhere. URL for the project is [modyawad.pythonanywhere.com](https://modyawad.pythonanywhere.com).
 
 <img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/project4/screenshots/home_1.png"><br/>
 
@@ -118,3 +120,7 @@ Front-end for _**Google Search**_, _**Google Image Search**_, and **_Google Adva
   - Find pages with… “none of these words:”
 
 ###### Front-end: HTML, and CSS<br/>Directory: search
+
+## Contact
+- [Linkedin](https://www.linkedin.com/in/muhammad-el-sayed-2000)
+- Email: mody.elsayed555@gmail.com
