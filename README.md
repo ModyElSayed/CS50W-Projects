@@ -89,7 +89,7 @@ An **eBay-like** e-commerce auction site that will allow users to post auction l
 ## Wiki
 A **Wikipedia-like** online encyclopedia. Each encyclopedia entry will be saved as a Markdown file
 
-<img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/commerce/screenshots/home.png"><br/>
+<img src="https://github.com/ModyElSayed/CS50W-Projects/blob/master/wiki/screenshots/home.png"><br/>
 
 ### Specification
 - **Entry Page**: Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, render a page that displays the contents of that encyclopedia entry.
