@@ -1,5 +1,7 @@
-# CS50W-Projects
-All projects of CS50's Web Programming with Python and JavaScript, these projects are done from **_scratch_** (except **Mail** because it was a single-page-app and the django part was implemented for me, but I understand every sentence), and they **are not base on the lectures**.
+# Web-Projects
+5 Web projects: 4 Full Stack projects and 1 Frontend project. They are order from the most complex to the easiest.
+
+Backend Development is the primary focus of these projects.
 
 ### Table of Content
 - [Network](#network)
