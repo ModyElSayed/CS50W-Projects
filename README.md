@@ -1,4 +1,4 @@
-# Web-Projects
+# Web Projects
 5 Web projects: 4 Full Stack projects and 1 Frontend project. They are order from the most complex to the easiest.
 
 Backend Development is the primary focus of these projects.
